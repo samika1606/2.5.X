@@ -8,12 +8,23 @@ import java.io.File;
 
 public class  Board
 {
+    //3
   private String solvedPhrase;
   private String phrase;
   private int currentLetterValue; 
 
   /* your code here - constructor(s) */ 
-  
+  public Board(){ //7
+    //8
+    solvedPhrase = "";
+    phrase = "";
+    currentLetterValue = 0; 
+
+    phrase = loadPhrase(); //15
+    currentLetterValue = setLetterValue();// 15
+
+    System.out.println("Phrase: " + phrase); //temp test code (15)
+  }
   /* your code here - accessor(s) */
   
   /* your code here - mutator(s)  */
