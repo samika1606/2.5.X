@@ -27,28 +27,49 @@ public class PhraseSolver
         game = new Board(); //#16
     }
 
-  public void play () {/*incomplete */}
-  
+  //public void play () {/*incomplete */}
+
   /* your code here - accessor(s) */
   
   /* your code here - mutator(s)  */
 
+
+  // All below is 2.5.5
   public void play()
   {
     boolean solved = false;
-    int currentPlayer = 1;
+    Player currentPlayer = player1;
 
     Scanner input = new Scanner(System.in);
     
     boolean correct = true;
+    String guess = "";
     while (!solved) 
     {
-      
+      System.out.println(currentPlayer.playerNames());
       /* your code here - game logic */
-      
+      System.out.println("Current Phrase is: " + game.partialPhrase());
+      System.out.println("Enter your guess: ");
+      guess = input.nextLine();
+
+      if ((guess.equals(game.phraseToSolve()))){
+        System.out.println(currentPlayer.playerNames() + " is the WINNER!");
+        solved = true; 
+      }
+
+      if (game.guessLetter(guess)){
+        System.out.println("The letter is in the phrase!");
+      }
+
+      if (currentPlayer == player1){
+        currentPlayer = player2;
+      }
+      else if (currentPlayer == player2){
+        currentPlayer = player1;
+      }
       
       /* your code here - determine how game ends */
-      solved = true; 
+
     } 
    
   }

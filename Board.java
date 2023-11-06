@@ -21,19 +21,23 @@ public class  Board
     currentLetterValue = 0; 
 
     phrase = loadPhrase(); //15
-    currentLetterValue = setLetterValue();// 15
+    //currentLetterValue = setLetterValue();// 15
 
-    System.out.println("Phrase: " + phrase); //temp test code (15)
+    //System.out.println("Phrase: " + phrase); //temp test code (15)
   }
 
-public String board() {/*incomplete */}
+  
+//public String board() {/*incomplete */}
 
-public String blank() {/*incomplete */}
+//public String blank() {/*incomplete */}
 
-public String input() {/*incomplete */}
+//public String input() {/*incomplete */}
 
-public String turns() {/*incomplete */}
+//public String turns() {/*incomplete */}
+
   /* your code here - accessor(s) */
+
+   // ALL ACCESSORS ARE 2.5.4
 
   public String phraseToSolve(){
     return phrase;
@@ -47,6 +51,20 @@ public String turns() {/*incomplete */}
     return currentLetterValue;
   }
   /* your code here - mutator(s)  */
+
+  // ALL MUTATORS ARE 2.5.5
+
+  public void solvedPhrase(String phrase1) {
+    phrase = phrase1;
+  }
+
+  public void parPhrase(String par) {
+    solvedPhrase = par;
+  }
+
+  public void letterVal (int value) {
+    currentLetterValue = value;
+  }
 
 
   /* ---------- provided code, do not modify ---------- */
@@ -112,6 +130,7 @@ public String turns() {/*incomplete */}
     return tempPhrase;
   }  
 
+  // ALL COMMENTS BELOW ARE 2.5.3
   /* Takes in the the users guessed letter
    * Loops through the word, then compares each letter to the guessed letter
    * If letter is found in the word the guess is added to the place holder phrase

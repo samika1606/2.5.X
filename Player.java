@@ -32,23 +32,26 @@ public class Player
     points = 0;
   }
 
-  public String getname() {/*incomplete */}
-
-  public void setName(String inputName) {/*incomplete */}
-
-  public int getPoints() {/*incomplete */}
-
-  public  void addToPoints(int value) {/*incomplete */}
 
   /* your code here - accessor(s) */ 
+
+  // ALL ACCESSORS ARE 2.5.4
+
+  public String playerNames(){ 
+    return playername;
+  }
 
   public int playerPoints(){
     return points;
   }
 
-  public String playerNames(){
-    return playername;
+  /* your code here - mutator(s) */ 
+
+  public void setName(String inputName) {
+    playername = inputName;
   }
 
-  /* your code here - mutator(s) */ 
+  public  void addToPoints(int value) {
+    points = value;
+  }
 }
