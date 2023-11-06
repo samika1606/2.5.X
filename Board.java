@@ -25,8 +25,27 @@ public class  Board
 
     System.out.println("Phrase: " + phrase); //temp test code (15)
   }
+
+public String board() {/*incomplete */}
+
+public String blank() {/*incomplete */}
+
+public String input() {/*incomplete */}
+
+public String turns() {/*incomplete */}
   /* your code here - accessor(s) */
+
+  public String phraseToSolve(){
+    return phrase;
+  }
+
+  public String partialPhrase(){
+    return solvedPhrase;
+  }
   
+  public int currentLetterValue(){
+    return currentLetterValue;
+  }
   /* your code here - mutator(s)  */
 
 
@@ -93,24 +112,47 @@ public class  Board
     return tempPhrase;
   }  
 
+  /* Takes in the the users guessed letter
+   * Loops through the word, then compares each letter to the guessed letter
+   * If letter is found in the word the guess is added to the place holder phrase
+   * If the letter is not found an underscore and place is added to the place holder phrase
+   * Precondition:
+   *  guess contains a value
+   * Postcondition:
+   *  foundletter is returns
+   *  solvedPhrase is set equal to the new modifed to newSolvedPhrase
+   */
+
+
+  // Method header
   public boolean guessLetter(String guess)
   {
+    // Sets boolean variable to false
     boolean foundLetter = false;
+    //Sets string variable to an empty string
     String newSolvedPhrase = "";
     
+    // loops through all character in the string
     for (int i = 0; i < phrase.length(); i++)
     {
+      //compares each letter to guess
       if (phrase.substring(i, i + 1).equals(guess))
       {
+        //add guess to the variable
         newSolvedPhrase += guess + " ";
+        //sets boolean to true
         foundLetter = true;
       }
       else
       {
+        //if the guessed letter is not in the phrase , the underscore and space is added to new solved phrase
+        // solvedPhrase is double in length due to added spaces
         newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  
       }
     }
+    // The new phrase is set equal to the place holder solved phrase
     solvedPhrase = newSolvedPhrase;
+    // returns the boolean
     return foundLetter;
   } 
 } 

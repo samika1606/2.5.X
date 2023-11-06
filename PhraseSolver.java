@@ -26,6 +26,9 @@ public class PhraseSolver
 
         game = new Board(); //#16
     }
+
+  public void play () {/*incomplete */}
+  
   /* your code here - accessor(s) */
   
   /* your code here - mutator(s)  */
